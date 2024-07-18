@@ -33,8 +33,8 @@ def enter_move(board):
         print("Move not possible")
         
 def make_list_of_free_fields(board):
-    # The function browses the board and builds a list of all the free squares; 
-    # the list consists of tuples, while each tuple is a pair of row and column numbers.
+    # The function browses the board and builds a dictionary of all the free squares; 
+    # the values for each of the keys consists of tuples, where each tuple is a pair of row and column numbers.
     free_fields = {}
     for i in range(3):
         for j in range(3):
