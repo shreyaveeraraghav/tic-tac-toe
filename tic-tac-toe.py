@@ -84,20 +84,20 @@ print("-----------\n")
 while True:
     draw_move(board)
     display_board(board)
-    enter_move(board)
-    display_board(board)
-    computer_winner = victory_for(board, 'X')
-    if computer_winner == None:
-        user_winner = victory_for(board, 'O')
-        if user_winner == True:
-            print("You won !!")
-            break
-    else:
+    if victory_for(board, 'X'):
         print("You lost !!")
         break
-    
-if user_winner != True and computer_winner != True:
-    print("It's a tie!")
+    if not make_list_of_free_fields(board):
+        print("It's a tie!")
+        break
+    enter_move(board)
+    display_board(board)
+    if victory_for(board, 'O'):
+        print("You won !!")
+        break
+    if not make_list_of_free_fields(board):
+        print("It's a tie!")
+        break
 
 
 
